@@ -116,7 +116,7 @@
                 <div class="service-box">
                     <h3>Beveiliging van opvangcentra</h3>
                     <div class="icon-container">
-                        <img src="images/police-icon.png" alt="Event Security Icon" class="service-icon">
+                        <img src="images/police-icon.png" alt="Shelter security icon" class="service-icon">
                     </div>
                     <p>Professionele beveiliging voor opvangcentra met speciale aandacht voor de veiligheid van bewoners en personeel, uitgevoerd door getrainde beveiligers met culturele sensitiviteit.</p>
                 </div>
@@ -124,7 +124,7 @@
                 <div class="service-box">
                     <h3>Winkelbewaking</h3>
                     <div class="icon-container">
-                        <img src="images/patrol-icon.png" alt="Mobile Patrol Services Icon" class="service-icon">
+                        <img src="images/retail-icon.png" alt="Retail security icon" class="service-icon">
                     </div>
                     <p>Bescherm uw winkel tegen diefstal en incidenten met zichtbare én discrete beveiliging, afgestemd op uw situatie.</p>
                 </div>
@@ -132,7 +132,7 @@
                 <div class="service-box">
                     <h3>Evenementenbeveiliging of Stewarddiensten</h3>
                     <div class="icon-container">
-                        <img src="images/custom-solutions-icon.png" alt="Customized Security Solutions Icon" class="service-icon">
+                        <img src="images/event-icon.png" alt="Event security icon" class="service-icon">
                     </div>
                     <p>Professionele stewards voor evenementen, festivals, sportwedstrijden en bedrijfsbijeenkomsten die zorgen voor een veilige en georganiseerde omgeving voor alle bezoekers.</p>
                 </div>
@@ -140,7 +140,7 @@
                 <div class="service-box">
                     <h3>Beveiliging van zorginstellingen</h3>
                     <div class="icon-container">
-                        <img src="images/custom-solutions-icon.png" alt="Customized Security Solutions Icon" class="service-icon">
+                        <img src="images/hospital-icon.png" alt="Hospital security icon" class="service-icon">
                     </div>
                     <p>Gespecialiseerde beveiliging voor ziekenhuizen, klinieken en andere zorginstellingen met focus op de veiligheid van patiënten, personeel en bezoekers in een gevoelige omgeving.</p>
                 </div>
@@ -162,21 +162,29 @@
                 </div>
                 <div class="assessment-form">
                     <h2>Vraag direct een vrijblijvende offerte aan</h2>
-                    <form>
+
+                    <form method="POST" id="form">
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">         
+                        <input type="hidden" name="from_name" value="Website - new message">           
                         <div class="form-group">
-                            <input type="text" placeholder="Naam" required>
+                            <input type="text" placeholder="Naam" name="name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="E-mail" required>
+                            <input type="email" placeholder="E-mail" name="email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="Telefoonnummer" required>
+                            <input type="tel" placeholder="Telefoonnummer" name="phone" required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Uw bericht" rows="5" required></textarea>
+                            <textarea placeholder="Uw bericht" rows="5" name="message" required></textarea>
                         </div>
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                         <button type="submit" class="submit-btn">VERSTUUR AANVRAAG</button>
+
+                        <div id="result"></div>
+
                     </form>
+
                 </div>
             </div>
         </section>
@@ -187,7 +195,7 @@
             <div class="footer-logo">
                 <img src="images/logo.png" alt="Bralo Security Logo">
             </div>
-            <div style="flex: 1;padding: 0 40px;display: flex;">
+            <div class="footer-center">
                 <div class="social">
                     <a class="icon" href="https://www.linkedin.com/in/leo-bralo-28437531a/" target="_blank">
                         <img  style="padding: 10px;" src="images/linkedIn.png">
@@ -212,6 +220,7 @@
         </div>
         <div class="copyright">
             <p>© 2025 Bralo Security. Alle rechten voorbehouden.</p>
+            <a style="margin-top:20px;float: inline-end; color: #ccc;" href="https://www.flaticon.com/free-icons/hospital-building" title="hospital building icons">All icons created by Slidicon - Flaticon</a>
         </div>
     </footer>
 

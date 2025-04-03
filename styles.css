@@ -220,6 +220,7 @@ nav ul li a.active::after {
 /* Main Content Styles */
 .about-section {
     display: flex;
+    position: relative;
     padding: 70px 10%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('background.jpg');
     background-size: cover;
@@ -259,6 +260,7 @@ h2 {
     margin-bottom: 20px;
     line-height: 1.6;
     font-size: 16px;
+    overflow-wrap: break-word;
 }
 
 .contact-btn-container {
@@ -349,6 +351,7 @@ h2 {
     margin-top: 10px;
     line-height: 1.5;
     padding-left: 60px;
+    overflow-wrap: break-word;
 }
 
 /* Quote Section Styles */
@@ -569,6 +572,13 @@ footer {
                 filter: brightness(0.85);
             }
         }
+        .footer-center {
+            flex: 1;
+            padding: 0 40px;
+            display: flex;
+            width: 100%;
+            text-align: center;
+        }
         .footer-links {
             flex: 1;
         }
@@ -593,6 +603,7 @@ footer {
         .footer-contact p {
             flex: 1;
             margin: 5px 0;
+            text-align: center;
         }
     }
 }
@@ -711,7 +722,6 @@ footer {
 @media (max-width: 768px) {
     nav ul {
         display: block;
-        /* Changed from none to block so we can animate it */
         flex-direction: column;
         background-color: #0f648a;
         position: absolute;
@@ -722,7 +732,6 @@ footer {
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         z-index: 100;
 
-        /* Initial state for the animation */
         opacity: 0;
         transform: translateY(-20px);
         max-height: 0;
@@ -732,12 +741,10 @@ footer {
         padding-bottom: 0;
     }
 
-    /* Active state for the animation */
     nav ul.active {
         opacity: 1;
         transform: translateY(0);
         max-height: 500px;
-        /* Large enough to fit all items */
         padding: 20px;
     }
 
@@ -788,9 +795,29 @@ footer {
         font-size: 28px;
     }
 
+    .footer-logo {
+        width: 240px;
+
+        img {
+            width: 100%;
+        }
+    }
     .footer-content {
         flex-direction: column;
         align-items: center;
         gap: 20px;
+    }
+}
+
+
+@media (max-width: 320px) {
+    .footer-center {
+        padding: 0px!important;
+    }
+    .service-box {
+        padding: 5px 15px;
+    }
+    .icon-container {
+        margin-bottom: 0px;
     }
 }

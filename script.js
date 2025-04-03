@@ -7,20 +7,45 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburger.classList.toggle("open");
   });
 
-  function sendEmail() {
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var message = document.getElementById('message').value;
 
-    if (!name || !email || !message) {
-      alert("Please fill out all fields before sending.");
-      return;
-    }
-
-    window.location.href = `mailto:antonio@customisedcloud.hr?subject=Contact%20Form&body=Name:%20${name}%0AEmail:%20${email}%0A%0A${message}`;
-  }
-
-  window.sendEmail = sendEmail;
+  const form = document.getElementById('form');
+  const result = document.getElementById('result');
+  
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+    result.innerHTML = "Please wait..."
+  
+      fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json'
+              },
+              body: json
+          })
+          .then(async (response) => {
+              let json = await response.json();
+              if (response.status == 200) {
+                  result.innerHTML = "Form submitted successfully";
+              } else {
+                  console.log(response);
+                  result.innerHTML = json.message;
+              }
+          })
+          .catch(error => {
+              console.log(error);
+              result.innerHTML = "Something went wrong!";
+          })
+          .then(function() {
+              form.reset();
+              setTimeout(() => {
+                  result.style.display = "none";
+              }, 3000);
+          });
+  });
 
   const aboutContent = document.querySelector('.about-content');
   const serviceCards = document.querySelectorAll('.service-card');
