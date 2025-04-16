@@ -1,7 +1,9 @@
-/* Global Styles */
+:root {
+    --toolbar-height: 118px;
+
+}
+
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -26,6 +28,9 @@ section,
 .services-section,
 #testimonials,
 #contact {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
     scroll-margin-top: 143px;
 }
 
@@ -42,6 +47,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    height: var(--toolbar-height);
     z-index: 100;
 }
 
@@ -52,7 +58,7 @@ header {
 nav ul {
     display: flex;
     list-style: none;
-    width: 500px;
+    width: 600px;
 }
 
 nav ul li {
@@ -122,6 +128,7 @@ nav ul li a.active::after {
     color: white;
     overflow: hidden;
     padding: 50px;
+    margin-top: var(--toolbar-height) - 10px;
 }
 
 .hero-section:after {
@@ -222,7 +229,7 @@ nav ul li a.active::after {
     display: flex;
     position: relative;
     padding: 70px 10%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('background.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -260,7 +267,6 @@ h2 {
     margin-bottom: 20px;
     line-height: 1.6;
     font-size: 16px;
-    overflow-wrap: break-word;
 }
 
 .contact-btn-container {
@@ -296,35 +302,35 @@ h2 {
     position: relative;
 }
 
-.sec_icon_3:after {
+.line-3:after {
     content: "";
     display: block;
     height: 2px;
     width: 43px;
     background-color: rgb(101 101 101);
     position: absolute;
-    top: 9px;
-    -webkit-transform: rotateZ(149deg) skewX(-22deg);
-    transform: rotateZ(149deg) skewX(-22deg);
+    top: 14px;
+    -webkit-transform: rotateZ(149deg);
+    transform: rotateZ(-45deg);
     overflow: hidden;
-    left: 192px;
+    right: -7px;
     z-index: 0;
     -webkit-transition: all 500ms;
     transition: all 500ms;
 }
 
-.sec_icon_3:before {
+.line-3:before {
     content: "";
     display: block;
     height: 2px;
     width: 79px;
     background-color: rgb(101 101 101);
     position: absolute;
-    bottom: 52px;
-    -webkit-transform: rotateZ(149deg) skewX(-22deg);
-    transform: rotateZ(149deg) skewX(-22deg);
+    bottom: 26px;
+    -webkit-transform: rotateZ(-45deg);
+    transform: rotateZ(-45deg);
     overflow: hidden;
-    left: -6px;
+    left: -12px;
     z-index: 0;
     -webkit-transition: all 500ms;
     transition: all 500ms;
@@ -351,7 +357,6 @@ h2 {
     margin-top: 10px;
     line-height: 1.5;
     padding-left: 60px;
-    overflow-wrap: break-word;
 }
 
 /* Quote Section Styles */
@@ -533,6 +538,7 @@ footer {
 
 .footer-content {
     width: 100%;
+    max-width: 1440px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -543,6 +549,7 @@ footer {
 .footer-logo img {
     height: 180px;
 }
+
 footer {
     .footer-content {
         .social {
@@ -554,16 +561,17 @@ footer {
             color: #fff;
             transition: color 0.3s;
         }
-        
+
         .social a img {
             width: 64px;
             height: 64px;
         }
-        
+
         .social .icon:hover {
             a {
                 color: #cccccc;
             }
+
             p {
                 color: #cccccc;
             }
@@ -572,6 +580,7 @@ footer {
                 filter: brightness(0.85);
             }
         }
+
         .footer-center {
             flex: 1;
             padding: 0 40px;
@@ -579,9 +588,11 @@ footer {
             width: 100%;
             text-align: center;
         }
+
         .footer-links {
             flex: 1;
         }
+
         .footer-links ul {
             list-style: none;
             display: flex;
@@ -600,6 +611,7 @@ footer {
         .footer-links ul li a:hover {
             color: #ebebeb;
         }
+
         .footer-contact p {
             flex: 1;
             margin: 5px 0;
@@ -803,6 +815,7 @@ footer {
             height: 100%;
         }
     }
+
     .footer-content {
         flex-direction: column;
         align-items: center;
@@ -811,13 +824,22 @@ footer {
 }
 
 
+@media (max-width: 375px) {
+    .service-card p {
+        padding-left: 36px;
+        font-size: 12px;
+    }
+}
+
 @media (max-width: 320px) {
     .footer-center {
-        padding: 0px!important;
+        padding: 0px !important;
     }
+
     .service-box {
         padding: 5px 15px;
     }
+
     .icon-container {
         margin-bottom: 0px;
     }
