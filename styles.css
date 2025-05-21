@@ -1,6 +1,6 @@
 :root {
-    --toolbar-original-nav-height: 118px;
-    --info-bar-height: 35px; 
+    --toolbar-original-nav-height: 80px;
+    --info-bar-height: 35px;
     --toolbar-height: calc(var(--toolbar-original-nav-height) + var(--info-bar-height));
 }
 
@@ -32,7 +32,7 @@ section,
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
-    scroll-margin-top: calc(var(--toolbar-height) + 25px);
+    scroll-margin-top: calc(var(--toolbar-height) - 25px);
 }
 
 
@@ -96,6 +96,7 @@ nav ul li a:hover::after,
 nav ul li a.active::after {
     width: 100%;
 }
+
 .main-nav-content {
     display: flex;
     justify-content: space-between;
@@ -106,6 +107,7 @@ nav ul li a.active::after {
     background-color: #0f648a;
     box-sizing: border-box;
 }
+
 .top-info-bar {
     background-color: #0c506e;
     color: #e0e0e0;
@@ -157,7 +159,7 @@ nav ul li a.active::after {
     color: white;
     overflow: hidden;
     padding: 50px;
-    padding-top: var(--toolbar-height); 
+    padding-top: var(--toolbar-height);
     margin-top: var(--toolbar-height) - 10px;
 }
 
