@@ -650,6 +650,23 @@ footer {
             text-align: center;
         }
     }
+    .permit-footer-info {
+        text-align: center;
+        color: #d1e7f0; /* A slightly lighter shade of white, or adjust to your preference */
+        font-size: 0.85em; /* Consistent with the top bar or adjust as needed */
+        margin-top: 20px; /* Space from the footer content above */
+        margin-bottom: 20px; /* Space before the copyright */
+        padding: 0 10%; /* Horizontal padding consistent with other footer/section elements */
+        width: 100%;
+        max-width: 1440px; /* Consistent with your main content max-width */
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+    
+    .permit-footer-info p {
+        margin: 0;
+    }
 }
 
 .copyright {
