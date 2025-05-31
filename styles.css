@@ -1,7 +1,5 @@
 :root {
-    --toolbar-original-nav-height: 80px;
-    --info-bar-height: 35px;
-    --toolbar-height: calc(var(--toolbar-original-nav-height) + var(--info-bar-height));
+    --toolbar-height: 80px;
 }
 
 * {
@@ -13,6 +11,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #1a1a1a;
     color: #ffffff;
+    margin: 0;
 }
 
 html {
@@ -108,27 +107,6 @@ nav ul li a.active::after {
     box-sizing: border-box;
 }
 
-.top-info-bar {
-    background-color: #0c506e;
-    color: #e0e0e0;
-    text-align: center;
-    font-size: 0.75em;
-    font-style: italic;
-    width: 100%;
-    height: var(--info-bar-height);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 10%;
-    box-sizing: border-box;
-    box-shadow: 0px 3px 2px 0px #0a3a4f;
-}
-
-.top-info-bar p {
-    margin: 0;
-    font-family: 'Times New Roman', Times, serif;
-}
-
 
 /* Hamburger Icon Styles */
 .hamburger {
@@ -146,11 +124,32 @@ nav ul li a.active::after {
     margin: 4px 0;
 }
 
-/* Hero Section Styles */
+.hero-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    filter: blur(10px);
+    z-index: 0;
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
 .hero-section {
     height: 100vh;
     position: relative;
-    background-image: url('images/hero.jpg');
+    background-color: #1a1a1a;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -174,6 +173,33 @@ nav ul li a.active::after {
     background-color: #127baa82;
     transform: skewX(-20deg) translateX(20%);
     z-index: 1;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.hero-image img.loaded {
+    opacity: 1;
+}
+
+.hero-image img.loaded + .hero-placeholder,
+.hero-image.loaded ~ .hero-placeholder {
+    opacity: 0;
 }
 
 .hero-overlay {
@@ -891,5 +917,16 @@ footer {
 
     .icon-container {
         margin-bottom: 0px;
+    }
+}
+@media (min-width: 768px) {
+    .hero-section {
+        background-image: url('images/hero-mobile.webp');
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero-section {
+        background-image: url('images/hero-desktop.webp'); 
     }
 }

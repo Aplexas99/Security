@@ -1,4 +1,34 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+  function optimizeHeroImage() {
+    const heroImg = document.querySelector('.hero-image img');
+    const heroPlaceholder = document.querySelector('.hero-placeholder');
+    
+    if (heroImg) {
+      if (heroImg.complete && heroImg.naturalHeight !== 0) {
+        heroImg.classList.add('loaded');
+        if (heroPlaceholder) {
+          heroPlaceholder.style.opacity = '0';
+        }
+      } else {
+        heroImg.addEventListener('load', function() {
+          heroImg.classList.add('loaded');
+          if (heroPlaceholder) {
+            heroPlaceholder.style.opacity = '0';
+          }
+        });
+        
+        heroImg.addEventListener('error', function() {
+          console.warn('Hero image failed to load');
+          if (heroPlaceholder) {
+            heroPlaceholder.style.opacity = '0';
+          }
+        });
+      }
+    }
+  }
+
+  optimizeHeroImage();
   const hamburger = document.querySelector(".hamburger");
   const navUl = document.querySelector("nav ul");
 

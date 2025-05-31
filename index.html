@@ -10,6 +10,12 @@
     <meta property="og:title" content="Bralo Security">
     <meta property="og:description" content="Landelijke beveiliging op maat – betrouwbaar, persoonlijk en altijd paraat">
     <title>Bralo Security</title>
+    
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="images/hero-mobile.webp" media="(max-width: 1199px)">
+    <link rel="preload" as="image" href="images/hero-desktop.webp" media="(min-width: 1200px)">
+    <link rel="preload" as="image" href="images/logo.png">
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +28,7 @@
     <header>
         <div class="main-nav-content">
             <div class="logo-container">
-                <img src="images/logo.png" alt="Bralo Security Logo" loading="lazy">
+                <img src="images/logo.png" alt="Bralo Security Logo" fetchpriority="high">
             </div>
             <div class="hamburger">
                 <span></span>
@@ -38,14 +44,17 @@
                 </ul>
             </nav>
         </div>
-    
-        <div class="top-info-bar">
-            <p>Vergunning verleend door het Ministerie van Justitie en Veiligheid, ND-nummer: ND8612</p>
-        </div>
     </header>
     <main>
-        <!-- Hero Section -->
         <section id="hero" class="hero-section">
+            <div class="hero-background">
+                <div class="hero-placeholder"></div>
+                <picture class="hero-image">
+                    <source media="(min-width: 1200px)" srcset="images/hero-desktop.webp" type="image/webp">
+                    <source media="(max-width: 1199px)" srcset="images/hero-mobile.webp" type="image/webp">
+                    <img src="images/hero-mobile.webp" alt="Bralo Security Hero Background" fetchpriority="high" loading="eager">
+                </picture>
+            </div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h2>WELKOM BIJ BRALO SECURITY</h2>
@@ -75,8 +84,8 @@
 
             <div class="services-highlights">
                 <div class="service-card">
-                    <div class="icon-container  line-3">
-                        <img src="images/custom-solutions-icon.png" alt="Custom Solutions Icon" loading="lazy">
+                    <div class="icon-container line-3">
+                        <img src="images/custom-solutions-icon.png" alt="Custom Solutions Icon" loading="lazy" decoding="async">
                     </div>
                     <div class="title">OPLOSSINGEN OP MAAT</div>
                     <p>Wij ontwikkelen gepersonaliseerde beveiligingsstrategieën die aansluiten bij uw unieke behoeften en vereisten.</p>
@@ -84,7 +93,7 @@
 
                 <div class="service-card">
                     <div class="icon-container line-3">
-                        <img src="images/prevent-icon.png" alt="Proactive Approach Icon" loading="lazy">
+                        <img src="images/prevent-icon.png" alt="Proactive Approach Icon" loading="lazy" decoding="async">
                     </div>
                     <div class="title">PROACTIEVE AANPAK</div>
                     <p>Wij anticiperen op beveiligingsuitdagingen met een vooruitziende blik in plaats van simpelweg te reageren op incidenten.</p>
@@ -92,7 +101,7 @@
 
                 <div class="service-card">
                     <div class="icon-container line-3">
-                        <img src="images/camera-icon.png" alt="Technology Integration Icon" loading="lazy">
+                        <img src="images/camera-icon.png" alt="Technology Integration Icon" loading="lazy" decoding="async">
                     </div>
                     <div class="title">SLIMME BEVEILIGING</div>
                     <p>Wij benutten de nieuwste beveiligingstechnologieën om bescherming te verbeteren en uitgebreide dekking te bieden.</p>
@@ -117,7 +126,7 @@
                 <div class="service-box">
                     <h3>Objectbeveiliging</h3>
                     <div class="icon-container">
-                        <img src="images/property-icon.png" alt="Property Security Icon" class="service-icon" loading="lazy">
+                        <img src="images/property-icon.png" alt="Property Security Icon" class="service-icon" loading="lazy" decoding="async">
                     </div>
                     <p>Uitgebreide bescherming voor commerciële panden, kantoren en industriële faciliteiten met 24/7 bewaking en snelle respons op alarmen.</p>
                 </div>
@@ -125,7 +134,7 @@
                 <div class="service-box">
                     <h3>Beveiliging van opvangcentra</h3>
                     <div class="icon-container">
-                        <img src="images/police-icon.png" alt="Shelter security icon" class="service-icon" loading="lazy">
+                        <img src="images/police-icon.png" alt="Shelter security icon" class="service-icon" loading="lazy" decoding="async">
                     </div>
                     <p>Professionele beveiliging voor opvangcentra met speciale aandacht voor de veiligheid van bewoners en personeel, uitgevoerd door getrainde beveiligers met culturele sensitiviteit.</p>
                 </div>
@@ -133,7 +142,7 @@
                 <div class="service-box">
                     <h3>Winkelbewaking</h3>
                     <div class="icon-container">
-                        <img src="images/retail-icon.png" alt="Retail security icon" class="service-icon" loading="lazy">
+                        <img src="images/retail-icon.png" alt="Retail security icon" class="service-icon" loading="lazy" decoding="async">
                     </div>
                     <p>Bescherm uw winkel tegen diefstal en incidenten met zichtbare én discrete beveiliging, afgestemd op uw situatie.</p>
                 </div>
@@ -141,7 +150,7 @@
                 <div class="service-box">
                     <h3>Evenementenbeveiliging of Stewarddiensten</h3>
                     <div class="icon-container">
-                        <img src="images/event-icon.png" alt="Event security icon" class="service-icon" loading="lazy">
+                        <img src="images/event-icon.png" alt="Event security icon" class="service-icon" loading="lazy" decoding="async">
                     </div>
                     <p>Professionele stewards voor evenementen, festivals, sportwedstrijden en bedrijfsbijeenkomsten die zorgen voor een veilige en georganiseerde omgeving voor alle bezoekers.</p>
                 </div>
@@ -149,7 +158,7 @@
                 <div class="service-box">
                     <h3>Beveiliging van zorginstellingen</h3>
                     <div class="icon-container">
-                        <img src="images/hospital-icon.png" alt="Hospital security icon" class="service-icon" loading="lazy">
+                        <img src="images/hospital-icon.png" alt="Hospital security icon" class="service-icon" loading="lazy" decoding="async">
                     </div>
                     <p>Gespecialiseerde beveiliging voor ziekenhuizen, klinieken en andere zorginstellingen met focus op de veiligheid van patiënten, personeel en bezoekers in een gevoelige omgeving.</p>
                 </div>
@@ -173,7 +182,7 @@
                     <h2>Vraag direct een vrijblijvende offerte aan</h2>
 
                     <form method="POST" id="form">
-                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">         
+                        <input type="hidden" name="access_key" value="48eddd33-4abd-4cdd-b2b5-b1c876173d38">         
                         <input type="hidden" name="from_name" value="Website - new message">           
                         <div class="form-group">
                             <input type="text" placeholder="Naam" name="name" required>
@@ -202,12 +211,12 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="images/logo.png" alt="Bralo Security Logo" loading="lazy">
+                <img src="images/logo.png" alt="Bralo Security Logo" loading="lazy" decoding="async">
             </div>
             <div class="footer-center">
                 <div class="social">
                     <a class="icon" href="https://www.linkedin.com/in/leo-bralo-28437531a/" target="_blank">
-                        <img  style="padding: 10px;" src="images/linkedIn.png" loading="lazy">
+                        <img style="padding: 10px;" src="images/linkedIn.png" loading="lazy" decoding="async">
                         <p>LinkedIn</p>
                     </a>
                 </div>
@@ -252,5 +261,7 @@
           "telephone": "+31640542460",
           "email": "info@bralosecurity.nl"
         }
-        </script>
+    </script>
 </body>
+
+</html>
